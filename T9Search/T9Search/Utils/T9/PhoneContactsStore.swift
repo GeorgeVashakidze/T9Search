@@ -158,12 +158,7 @@ final class PhoneContactStore {
                             if let data = contact.thumbnailImageData {
                                 local.image = UIImage(data: data)
                             }
-                            var phoneNum = phone.value.stringValue
-                            if phoneNum.contains("+995") {
-                                phoneNum = phoneNum.substring(from: "+995".count)
-                            } else if phoneNum.hasPrefix("995") {
-                                phoneNum = phoneNum.substring(from: "995".count)
-                            }
+                            var phoneNum = phone.value.stringValue                            
                             let strArr = phoneNum.components(separatedBy: CharacterSet.decimalDigits.inverted)
                             phoneNum = NSArray(array: strArr).componentsJoined(by: "")
                             local.phoneNumber = phoneNum

@@ -28,6 +28,7 @@ final class ViewController: UIViewController {
             ),
             forCellReuseIdentifier: "ContactListCell"
         )
+        self.searchBar.keyboardType = .numberPad
         PhoneContactStore.requestForAccess { (ok, err) in }
     }
     
